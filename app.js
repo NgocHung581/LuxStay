@@ -1,11 +1,8 @@
-var headerSearchInput = document.querySelector(".header__search-inputs input");
-var headerSearchResult = document.querySelector(".header__search-result");
-var sliderList = document.querySelectorAll(
-  ".slider__content-list .slider__content-item"
-);
-var sliderDots = document.querySelectorAll(
-  ".slider__content-select .slider__content-select-dot"
-);
+//Load page
+var loadPage = document.querySelector(".load-page");
+setTimeout(() => {
+  loadPage.style = "display: none";
+}, 3000);
 
 // Go to top
 var btnGoToTop = document.querySelector(".btn-go-to-top");
@@ -26,6 +23,9 @@ btnGoToTop.onclick = () => {
 window.addEventListener("scroll", showBtnGoToTop);
 
 // Toggle search result
+var headerSearchInput = document.querySelector(".header__search-inputs input");
+var headerSearchResult = document.querySelector(".header__search-result");
+
 headerSearchInput.onfocus = function () {
   headerSearchResult.style = "opacity: 1; visibility: visible;";
 };
@@ -35,6 +35,13 @@ headerSearchInput.onblur = function () {
 };
 
 // Slider
+var sliderList = document.querySelectorAll(
+  ".slider__content-list .slider__content-item"
+);
+var sliderDots = document.querySelectorAll(
+  ".slider__content-select .slider__content-select-dot"
+);
+
 var i = 0;
 function changeSlider() {
   sliderDots[i].classList.toggle("slider__content-select-dot--active");
@@ -68,7 +75,7 @@ $(".owl-location").owlCarousel({
   autoplayTimeout: 3000,
   responsive: {
     0: {
-      items: 2,
+      items: 1,
     },
     740: {
       items: 3,
